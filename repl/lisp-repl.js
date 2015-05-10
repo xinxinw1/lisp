@@ -106,11 +106,11 @@ function nex(){
 
 it.onkeydown = function (e){
   var c = udfp(e.key)?e.keyCode:e.key;
-  if (inp(c, "Up", 38)){
+  if (inp(c, "ArrowUp", "Up", 38)){
     pre();
     return false;
   }
-  if (inp(c, "Down", 40)){
+  if (inp(c, "ArrowDown", "Down", 40)){
     nex();
     return false;
   }

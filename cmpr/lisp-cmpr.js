@@ -31,4 +31,4 @@ L.djn("*out*", function (a){
 
 src.value = $.get("test.lisp");
 
-//L.jcal("cmps", L.st($.get("lisp-cmp-core.lisp")));
+L.jcal("cmps", L.st($.get("lisp-cmp-core.lisp")));
