@@ -26,8 +26,10 @@ var it = $("input");
 var res = $("results");
 var pg = $("page");
 
+var his = $.his(it);
+
 function run(a){
-  his(a);
+  his.add(a);
   out("JS-LISP> " + a);
   rst();
   
@@ -80,39 +82,3 @@ L.evlf($.libdir + "/lisp-compile-basic/lisp-compile-basic.lisp");
 
 //L.exe(get("/codes/apps/lisp-repl/devel7/lisp-test.lisp"));
 
-var hs = [];
-var p = 0;
-var tmp = "";
-
-function his(a){
-  psh(a, hs);
-  p = len(hs);
-}
-
-function pre(){
-  if (p > 0){
-    if (p == len(hs))tmp = it.value;
-    p--;
-    it.value = hs[p];
-  }
-}
-
-function nex(){
-  if (p <= len(hs)-1){
-    p++;
-    it.value = (p == len(hs))?tmp:hs[p];
-  }
-}
-
-it.onkeydown = function (e){
-  var c = udfp(e.key)?e.keyCode:e.key;
-  if (inp(c, "ArrowUp", "Up", 38)){
-    pre();
-    return false;
-  }
-  if (inp(c, "ArrowDown", "Down", 40)){
-    nex();
-    return false;
-  }
-  return true;
-};
