@@ -9,7 +9,7 @@
 /* require lisp-core */
 /* require lisp-compile-basic */
 
-L.evlf("lib/lisp-compile-basic.lisp");
+L.evlf($.libdir + "/lisp-compile-basic/lisp-compile-basic.lisp");
 
 var but = $("cmp");
 var src = $("src");
