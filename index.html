@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lisp to JS Compiler Devel</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="lisp-cmpr.css">
+</head>
+
+<body>
+  <table id="pg"><tr>
+    <td id="left">
+      <table>
+        <tr>
+          <td id="head">
+            <div id="logo">Lisp to JS Compiler Devel</div>
+            <div id="buts">
+              <input type="button" value="Compile >" id="cmp">
+            </div>
+          </td>
+        </tr><tr>
+          <td id="srcd">
+            <textarea id="src"></textarea>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td id="right">
+      <textarea id="res" readonly></textarea>
+    </td>
+  </tr></table>
+  <script src="lib/tools.js"></script>
+  <script src="lib/ajax.js"></script>
+  <script src="lib/prec-math.js"></script>
+  <script src="lib/lisp-tools.js"></script>
+  <script src="lib/lisp-parse.js"></script>
+  <script src="lib/lisp-exec.js"></script>
+  <script src="lib/lisp-core.js"></script>
+  <script src="lisp-cmpr.js"></script>
+</body>
+
+</html>
