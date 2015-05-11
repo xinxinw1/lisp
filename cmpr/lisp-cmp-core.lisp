@@ -5,11 +5,15 @@
 (mac defn a `(exen (def ,@a)))
 (mac macn a `(exen (mac ,@a)))
 
+(js-mac smac a `(js-smac ,@a))
+
+(smac nil 'js-nil)
+
 (mac dot () `|.|)
 
 (mac by (n nm op)
   `(mac ,nm #g
-     `(do ,@(map [qq (,,op ,@_)] (grp #g ,n)))))
+     `(do ,@(mapn `(,,op ,@_) (grp #g ,n)))))
 
 (mac byone (nm op)
   `(by 1 ,nm ,op))
@@ -23,21 +27,18 @@
   `(mac ,new #args `(,,old ,@#args)))
 
 (mac jsali a
-  `(alias ,@(fla (map jsali1 a))))
-
-(defn jsali1 (a)
-  (lis a (app 'js- a)))
+  `(alias ,@(mapnapp `(,_ ,(app 'js- _)) a)))
 
 (jsali cal
        var fn rfn def new
-       if brk cont
-       ret thr nret
-       mmac mblk smblk qt
-       do cdo1)
+       if break cont
+       ret throw nret
+       mmac mblock smblock qt
+       do cdo1 arr)
 
 (mmac dtfn a (x . args)
   `((. ,x ,@a) ,@args))
 
-(mac amblk a
-  `(mblk (smblk (mmblk ,@a))))
+(mac amblock a
+  `(mblock (smblock (mmblock ,@a))))
 
