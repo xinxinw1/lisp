@@ -22,3 +22,6 @@
 [submodule "lib/lisp-compile-basic"]
 	path = lib/lisp-compile-basic
 	url = git@github.com:xinxinw1/lisp-compile-basic
+[submodule "lib/lisp-format"]
+	path = lib/lisp-format
+	url = git@github.com:xinxinw1/lisp-format

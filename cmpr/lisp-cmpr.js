@@ -9,6 +9,7 @@
 /* require lisp-core */
 /* require lisp-compile-basic */
 
+L.evlf($.libdir + "/lisp-format/lisp-format.lisp");
 L.evlf($.libdir + "/lisp-compile-basic/lisp-compile-basic.lisp");
 
 var but = $("cmp");

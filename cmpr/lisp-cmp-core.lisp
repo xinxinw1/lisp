@@ -9,21 +9,15 @@
 
 (smac nil 'js-nil)
 
-(mac dot () `|.|)
-
 (mac by (n nm op)
   `(mac ,nm #g
      `(do ,@(mapn `(,,op ,@_) (grp #g ,n)))))
 
-(mac byone (nm op)
-  `(by 1 ,nm ,op))
+(mac macby (nm ag . bd)
+  `(do (mac #g ,ag ,@bd)
+       (by ,(len ag) ,nm #g)))
 
-(mac bytwo (nm op)
-  `(by 2 ,nm ,op))
-
-(bytwo alias alias1)
-
-(mac alias1 (new old)
+(macby alias (new old)
   `(mac ,new #args `(,,old ,@#args)))
 
 (mac jsali a
