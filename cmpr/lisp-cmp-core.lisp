@@ -23,7 +23,7 @@
 (mac jsali a
   `(alias ,@(mapnapp `(,_ ,(app 'js- _)) a)))
 
-(jsali cal
+(jsali call
        var fn rfn def new
        if break cont
        ret throw nret

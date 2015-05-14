@@ -19,7 +19,7 @@ var res = $("res");
 but.onclick = function (){
   res.value = "";
   try {
-    L.jcal("cmpp", L.st(src.value));
+    L.jcal("compprocprn", L.st(src.value));
   } catch (e){
     res.value += e;
   }
@@ -32,4 +32,4 @@ L.djn("*out*", function (a){
 
 src.value = $.get("test.lisp");
 
-L.jcal("cmps", L.st($.get("lisp-cmp-core.lisp")));
+L.jcal("compprocstr", L.st($.get("lisp-cmp-core.lisp")));

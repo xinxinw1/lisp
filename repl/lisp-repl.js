@@ -37,7 +37,7 @@ function run(a){
     out(L.evls(a));
   } catch (e){
     // taken care of by efn(e)
-    out(dmp(e));
+    out($.str(e));
   }
 }
 
