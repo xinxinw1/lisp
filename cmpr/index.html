@@ -5,6 +5,21 @@
   <title>Lisp to JS Compiler Devel</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="lisp-cmpr.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <style>
+  #drag {position: absolute; right: 0; border: 1px solid #000; background: #FFF; padding: 3px; font-size: 16px;}
+  #drag span {font-size: 16px;}
+  </style>
+  <script>
+  jQuery.noConflict();
+  (function ($){
+    $(function (){
+      $("#drag").draggable();
+    });
+  })(jQuery);
+  </script>
+</head>
 </head>
 
 <body>
@@ -29,6 +44,9 @@
       <textarea id="res" readonly></textarea>
     </td>
   </tr></table>
+  <div id="drag">
+    Time: <span id="time">?</span> ms
+  </div>
   <script src="../lib/tools/tools.js"></script>
   <script src="../lib/ajax/ajax.js"></script>
   <script src="../lib/prec-math/prec-math.js"></script>

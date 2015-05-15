@@ -78,8 +78,10 @@ L.djn("*out*", function (a){
 
 //sefn(cmb(out, dmp));
 
-L.evlf($.libdir + "/lisp-format/lisp-format.lisp");
-L.evlf($.libdir + "/lisp-compile-basic/lisp-compile-basic.lisp");
+$("time").innerHTML = $.spd1(function (){
+  L.evlf($.libdir + "/lisp-format/lisp-format.lisp");
+  L.evlf($.libdir + "/lisp-compile-basic/lisp-compile-basic.lisp");
+});
 
 //L.exe(get("/codes/apps/lisp-repl/devel7/lisp-test.lisp"));
 
