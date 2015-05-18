@@ -33,12 +33,14 @@ function run(a){
   out("JS-LISP> " + a);
   rst();
   
-  try {
-    out(L.evls(a));
-  } catch (e){
-    // taken care of by efn(e)
-    out($.str(e));
-  }
+  time(function (){
+    try {
+      out(L.evls(a));
+    } catch (e){
+      // taken care of by efn(e)
+      out($.str(e));
+    }
+  });
 }
 
 function ou(a){
@@ -76,9 +78,17 @@ L.djn("*out*", function (a){
   return L.nil();
 });
 
+function settime(a){
+  $("time").innerHTML = a;
+}
+
+function time(a){
+  settime($.spd1(a));
+}
+
 //sefn(cmb(out, dmp));
 
-$("time").innerHTML = $.spd1(function (){
+time(function (){
   L.evlf($.libdir + "/lisp-format/lisp-format.lisp");
   L.evlf($.libdir + "/lisp-compile-basic/lisp-compile-basic.lisp");
 });
