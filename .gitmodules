@@ -25,3 +25,6 @@
 [submodule "lib/lisp-format"]
 	path = lib/lisp-format
 	url = git@github.com:xinxinw1/lisp-format
+[submodule "lib/test-suite"]
+	path = lib/test-suite
+	url = git@github.com:xinxinw1/test-suite
